@@ -7,11 +7,21 @@
         </a>
       </div>
       <div class="col-md-6">
+
         <input class="form-control" type="text" placeholder="Pesquise por ofertas" #termoDaPesquisa
           (keyup)="pesquisa(termoDaPesquisa.value)">
+
+        <ul class="list-group" style="position: absolute;z-index: 999;">
+          <li class="list-group-item" *ngFor="let o of ofertas | async ">
+            <a [routerLink]="['/oferta',o.id]" (click)="limpaPesquisa()">
+              {{o.titulo | descricaoReduzida:15 }}
+            </a>
+
+          </li>
+        </ul>
       </div>
       <div class="col-md-2">
-        <a a href="#"><img src="/assets/carrinho.png" /></a>
+        <a a routerLink="/ordem-compra"><img src="/assets/carrinho.png" /></a>
       </div>
     </div>
   </nav>

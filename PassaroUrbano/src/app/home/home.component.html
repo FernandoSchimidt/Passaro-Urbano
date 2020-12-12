@@ -11,10 +11,10 @@
     <div class="col-sm-4" *ngFor="let o of ofertas">
       <div class="card">
         <img class="card-img-top" [src]="o.imagens[0].url">
-        <div class="card-block">
+        <div class="card-block px-3 py-3">
           <h4 class="card-title">{{o.titulo}}</h4>
           <p class="card-text">{{o.descricao_oferta}}</p>
-          <p class="preco">R$ {{o.valor}}</p>
+          <p class="preco " >{{o.valor | currency:'BRL':true}}</p>
           <a [routerLink]="['/oferta',o.id]" class="btn btn-outline-primary">Ver oferta</a>
         </div>
       </div>

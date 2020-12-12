@@ -16,7 +16,7 @@
 
 .banner img {
     width: 100%;
-    height: 230px
+    height: 280px
 }
 
 .active {
@@ -27,3 +27,9 @@ background-color: #fff;
 
 }
 .container{}
+
+@media(max-width:767px){
+  .banner{
+    margin-top: 212px;
+  }
+}
